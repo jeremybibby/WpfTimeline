@@ -101,6 +101,16 @@ namespace Infusion.WpfTimelineControl.ViewModels
         {
             this.CurrentPosition = TimeSpan.FromSeconds(_rand.Next(5));
             this.ZoomLevel = _rand.Next(4);
+
+            for (int j = 0; j < 2; j++ )
+                for (int i = 0; i < 5; i++)
+                {
+                    VideoTimelineItemViewModel vtli = new VideoTimelineItemViewModel();
+                    vtli.SetupDesignTimeData();
+
+                    if (j == 0) this.ServerTimeline.Add(vtli);
+                    else this.ClientTimeline.Add(vtli);
+                }
             
         }
 

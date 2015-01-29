@@ -18,6 +18,50 @@ namespace Infusion.WpfTimelineControl.ViewModels
         #endregion instance variables
 
 
+        #region properties
+
+        public string ItemName
+        {
+            get { return _itemName; }
+            set
+            {
+                if (value != _itemName)
+                {
+                    _itemName = value;
+                    NotifyOfPropertyChange(() => ItemName);
+                }
+            }
+        }
+
+        public TimeSpan StartTime
+        {
+            get { return _startTime; }
+            set
+            {
+                if (value != _startTime)
+                {
+                    _startTime = value;
+                    NotifyOfPropertyChange(() => StartTime);
+                }
+            }
+        }
+
+        public TimeSpan Duration
+        {
+            get { return _duration; }
+            set
+            {
+                if (value != _duration)
+                {
+                    _duration = value;
+                    NotifyOfPropertyChange(() => Duration);
+                }
+            }
+        }
+
+        #endregion properties
+
+
 
         #region virtual methods
 

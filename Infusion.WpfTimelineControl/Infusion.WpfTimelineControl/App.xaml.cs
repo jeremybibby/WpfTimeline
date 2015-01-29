@@ -32,12 +32,13 @@ namespace Infusion.WpfTimelineControl
 
             // setup main window
             ShellView mw = new ShellView();
+            // show the main window
+            mw.Show();
+
 
             // setup teh bootstrapper
             _bootstrapper = new AppBootstrapper();
 
-            // show the main window
-            mw.Show();
         }
 
         #region helper methods
