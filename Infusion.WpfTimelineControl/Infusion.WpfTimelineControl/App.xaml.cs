@@ -1,4 +1,6 @@
-﻿using log4net;
+﻿using Infusion.WpfTimelineControl.Utilities;
+using Infusion.WpfTimelineControl.Views;
+using log4net;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -17,7 +19,8 @@ namespace Infusion.WpfTimelineControl
     public partial class App : Application
     {
         private ILog _log;
-
+        private AppBootstrapper _bootstrapper;
+        
         public App()
         {
             // setup log
@@ -26,6 +29,15 @@ namespace Infusion.WpfTimelineControl
 
             // exception handling
             InitializeExceptionHandling();
+
+            // setup main window
+            ShellView mw = new ShellView();
+
+            // setup teh bootstrapper
+            _bootstrapper = new AppBootstrapper();
+
+            // show the main window
+            mw.Show();
         }
 
         #region helper methods
